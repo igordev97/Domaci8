@@ -8,22 +8,24 @@
                 <thead>
                 <tr>
                     <th>id</th>
-                    <th>Email</th>
-                    <th>Subject</th>
-                    <th>Message</th>
-                    <th>Delete Contact</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Delete product</th>
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach($allContacts as $contact)
+                    @foreach($allProducts as $product)
                         <tr>
-                            <td>{{$contact->id}}</td>
-                            <td>{{$contact->email}}</td>
-                            <td>{{$contact->subject}}</td>
-                            <td>{{$contact->message}}</td>
+                            <td>{{$product->id}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->description}}</td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->amount}}</td>
                             <td>
                                 <form>
-                                    <input type="hidden" name="id" value="{{$contact->id}}">
+                                    <input type="hidden" name="id" value="{{$product->id}}">
                                     <button class="btn btn-danger">Delete</button>
                                 </form>
                             </td>

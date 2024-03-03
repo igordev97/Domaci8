@@ -15,10 +15,18 @@
     </div>
 
     <div class="row">
-        <div class="col-12">
-            <h1 class="text-center">Last added products</h1>
+        <div class="col-12 d-flex flex-wrap">
+
             @foreach($products as $product)
-                <h1>{{$product->name}}</h1>
+                <div class="col-3 p-2 product-item">
+                    <h5>{{$product->name}}</h5>
+                    <h6><small>Price : ${{$product->price}}</small></h6>
+                    <img src="{{ asset('images/' . $product->image) }}" alt="" class="border img-fluid my-2" height="200px">
+                    <form>
+                        <input type="hidden" name="id" value="{{$product->id}}">
+                        <button class="btn btn-warning">Add to Cart</button>
+                    </form>
+                </div>
 
             @endforeach
         </div>

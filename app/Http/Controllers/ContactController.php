@@ -18,4 +18,24 @@ class ContactController extends Controller
        $allContacts = ContactModel::all();
        return view("allContacts",compact("title","allContacts"));
     }
+
+    public function sendData(Request $request){
+
+     $validate =  $request->validate([ // Validacija
+          "email"=>"required|string",
+          "subject"=>"required|string",
+          "message"=>"required|string|min:5"
+      ]);
+//Uzimanje podataka iz requesta se vrsi pomocu get metore $request->get("ime_vrednosti_koja_je_prosledjenja_preko_posta)
+      $email = $request->get("email");
+      $subject = $request->get("subject");
+      $message = $request->get("message");
+      ContactModel::create([
+          "email"=>$email,
+          "subject"=>$subject,
+          "message"=>$message
+      ]);
+
+
+}
 }

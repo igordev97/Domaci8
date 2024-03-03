@@ -24,5 +24,10 @@ Route::get('/about', function () {
 });
 Route::get('/contact',[\App\Http\Controllers\ContactController::class,"index"]);
 
-Route::get("/admin/all-contacts",[\App\Http\Controllers\ContactController::class,"getAllContacts"]);
+Route::get("/admin/allproducts",[\App\Http\Controllers\ProductController::class,"getAllProducts"]);
+Route::post("/send-question",[\App\Http\Controllers\ContactController::class,"sendData"]);
+
+
+Route::get("/admin/add-product",[\App\Http\Controllers\ProductController::class,"index"]);
+Route::post("/admin/save-product",[\App\Http\Controllers\ProductController::class,"saveProductToDatabase"]);
 

@@ -14,7 +14,7 @@ class HomepageController extends Controller
         $currentHour = date("H");
         $currentTime = date("H:i:s");
 
-        $products = ProductsModel::lastSix();
+        $products = ProductsModel::orderByDesc("id")->take(6)->get();
 
         return view("welcome",compact("title","currentTime","currentHour","products"));
 
