@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductsModel;
 use Illuminate\Http\Request;
 
 class HomepageController extends Controller
@@ -13,7 +14,9 @@ class HomepageController extends Controller
         $currentHour = date("H");
         $currentTime = date("H:i:s");
 
-        return view("welcome",compact("title","currentTime","currentHour"));
+        $products = ProductsModel::lastSix();
+
+        return view("welcome",compact("title","currentTime","currentHour","products"));
 
     }
 }

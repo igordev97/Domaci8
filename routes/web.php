@@ -24,3 +24,5 @@ Route::get('/about', function () {
 });
 Route::get('/contact',[\App\Http\Controllers\ContactController::class,"index"]);
 
+Route::get("/admin/all-contacts",[\App\Http\Controllers\ContactController::class,"getAllContacts"]);
+

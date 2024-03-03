@@ -14,5 +14,15 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Last added products</h1>
+            @foreach($products as $product)
+                <h1>{{$product->name}}</h1>
+
+            @endforeach
+        </div>
+    </div>
+
 @endsection
 
