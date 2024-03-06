@@ -24,10 +24,11 @@
                             <td>{{$product->price}}</td>
                             <td>{{$product->amount}}</td>
                             <td>
-                                <form>
-                                    <input type="hidden" name="id" value="{{$product->id}}">
-                                    <button class="btn btn-danger">Delete</button>
-                                </form>
+
+
+                                    <a href="/admin/delete-product/{{$product->id}}"class="btn btn-danger">Delete</a>
+                                <a href="/admin/edit-product/{{$product->id}}"></a>
+
                             </td>
                         </tr>
 

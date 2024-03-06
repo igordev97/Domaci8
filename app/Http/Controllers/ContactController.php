@@ -16,7 +16,7 @@ class ContactController extends Controller
     public function getAllContacts(){
         $title = "All Contacts";
        $allContacts = ContactModel::all();
-       return view("allContacts",compact("title","allContacts"));
+       return view("alllcontacts",compact("title","allContacts"));
     }
 
     public function sendData(Request $request){
@@ -36,6 +36,17 @@ class ContactController extends Controller
           "message"=>$message
       ]);
 
+      return redirect("/admin/all-contacts");
 
 }
+public function deleteContact($contact)
+{
+    $singleContact = ContactModel::where(["id"=>$contact])->first();
+    $singleContact->delete();
+
+    return redirect("/admin/all-contacts");
+}
+
+
+
 }
