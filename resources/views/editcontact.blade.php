@@ -3,7 +3,7 @@
 @section("page-content")
     <div class="row">
         <div class="col-6 mx-auto">
-            <form action="{{route("edit-contact",["id"=>$singleContact->id])}}" method="post" class="mt-5" enctype="multipart/form-data">
+            <form action="{{route("edit.contact",["id"=>$singleContact->id])}}" method="post" class="mt-5" enctype="multipart/form-data">
                 @if($errors->any())
                     <p class="text-danger">{{$errors->first()}}</p>
                 @endif
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message" class="form-label">New message: $</label>
+                    <label for="message" class="form-label">New message:</label>
                     <textarea name="message" class="form-control">{{$singleContact->message}}
                 </textarea>
                 </div>

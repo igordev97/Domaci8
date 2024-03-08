@@ -24,7 +24,7 @@
                         <td>{{$contact->message}}</td>
                         <td><a href="/admin/delete-contact/{{$contact->id}}" class="btn btn-danger">Delete</a></td>
                         <td>
-                            <a href="{{route("single-contact",["id"=>$contact->id])}}" class="btn btn-warning text-light">Edit</a>
+                            <a href="{{route("contact.single",["id"=>$contact->id])}}" class="btn btn-warning text-light">Edit</a>
 
                         </td>
 

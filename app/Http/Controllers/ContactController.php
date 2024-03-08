@@ -57,6 +57,8 @@ public function singleContact($id)
 public function editContact(Request $request,$id)
 {
  $singleContact = ContactModel::where(["id"=>$id])->first();
+
+
  $singleContact->email = $request->get("email");
  $singleContact->subject = $request->get("subject");
  $singleContact->message = $request->get("message");

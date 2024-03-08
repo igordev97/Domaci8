@@ -21,11 +21,11 @@
                             <td>{{$product->id}}</td>
                             <td>{{$product->name}}</td>
                             <td>{{$product->description}}</td>
-                            <td>{{$product->price}}</td>
+                            <td>${{$product->price}}</td>
                             <td>{{$product->amount}}</td>
                             <td><a href="{{route("delete-product",["product"=>$product->id])}}"class="btn btn-danger">Delete</a></td>
                             <td>
-                                <a href="{{route("single-product",["id"=>$product->id])}}" class="btn btn-warning text-light">Edit</a>
+                                <a href="{{route("product.single",["id"=>$product->id])}}" class="btn btn-warning text-light">Edit</a>
                             </td>
                         </tr>
 

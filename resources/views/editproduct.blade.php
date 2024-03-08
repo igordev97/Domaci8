@@ -3,7 +3,7 @@
 @section("page-content")
 <div class="row">
     <div class="col-6 mx-auto">
-        <form action="{{route("editProduct",["id"=>$singleProduct->id])}}" method="post" class="mt-5" enctype="multipart/form-data">
+        <form action="{{route("edit.product",["id"=>$singleProduct->id])}}" method="post" class="mt-5" enctype="multipart/form-data">
             @if($errors->any())
                 <p class="text-danger">{{$errors->first()}}</p>
             @endif
