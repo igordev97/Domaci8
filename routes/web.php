@@ -37,10 +37,10 @@ Route::get("/admin/delete-contact/{contact}",[\App\Http\Controllers\ContactContr
 
 
 //Edit product
-Route::get("/admin/product/{id}",[\App\Http\Controllers\ProductController::class,"singleProduct"])->name("product.single");
-Route::post("/admin/product/edit/{id}",[\App\Http\Controllers\ProductController::class,"editProduct"])->name("edit.product");
+Route::get("/admin/product/edit/{id}",[\App\Http\Controllers\ProductController::class,"singleProduct"])->name("product.single");
+Route::post("/admin/product/edit/save/{id}",[\App\Http\Controllers\ProductController::class,"editProduct"])->name("edit.product");
 
 
 //Edut contact
-Route::get("/admin/contact/{id}",[\App\Http\Controllers\ContactController::class,"singleContact"])->name("contact.single");
-Route::post("/admin/contact/edit/{id}",[\App\Http\Controllers\ContactController::class,"editContact"])->name("edit.contact");
+Route::get("/admin/contact/edit/{id}",[\App\Http\Controllers\ContactController::class,"singleContact"])->name("contact.single");
+Route::post("/admin/contact/edit/save/{id}",[\App\Http\Controllers\ContactController::class,"editContact"])->name("edit.contact");
