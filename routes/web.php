@@ -29,8 +29,18 @@ Route::post("/send-question",[\App\Http\Controllers\ContactController::class,"se
 
 
 Route::get("/admin/add-product",[\App\Http\Controllers\ProductController::class,"index"]);
-Route::post("/admin/save-product",[\App\Http\Controllers\ProductController::class,"saveProductToDatabase"]);
+Route::post("/admin/save-product",[\App\Http\Controllers\ProductController::class,"saveProductToDatabase"])->name("save-product");
 
-Route::get("/admin/delete-product/{product}",[\App\Http\Controllers\ProductController::class,"deleteProduct"]);
+Route::get("/admin/delete-product/{product}",[\App\Http\Controllers\ProductController::class,"deleteProduct"])->name("delete-product");
 Route::get("/admin/all-contacts",[\App\Http\Controllers\ContactController::class,"getAllContacts"]);
 Route::get("/admin/delete-contact/{contact}",[\App\Http\Controllers\ContactController::class,"deleteContact"]);
+
+
+//Edit product
+Route::get("/admin/product/{id}",[\App\Http\Controllers\ProductController::class,"singleProduct"])->name("single-product");
+Route::post("/admin/product/edit/{id}",[\App\Http\Controllers\ProductController::class,"editProduct"])->name("editProduct");
+
+
+//Edut contact
+Route::get("/admin/contact/{id}",[\App\Http\Controllers\ContactController::class,"singleContact"])->name("single-contact");
+Route::post("/admin/contact/edit/{id}",[\App\Http\Controllers\ContactController::class,"editContact"])->name("edit-contact");

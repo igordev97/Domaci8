@@ -47,6 +47,26 @@ public function deleteContact($contact)
     return redirect("/admin/all-contacts");
 }
 
+public function singleContact($id)
+{
+    $singleContact = ContactModel::where(["id"=>$id])->first();
+    $title = "Edit Contact";
+    return view("editcontact",compact("title","singleContact"));
+}
+
+public function editContact(Request $request,$id)
+{
+ $singleContact = ContactModel::where(["id"=>$id])->first();
+ $singleContact->email = $request->get("email");
+ $singleContact->subject = $request->get("subject");
+ $singleContact->message = $request->get("message");
+
+
+ $singleContact->save();
+
+ return redirect("/admin/all-contacts");
+}
+
 
 
 }

@@ -23,12 +23,9 @@
                             <td>{{$product->description}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->amount}}</td>
+                            <td><a href="{{route("delete-product",["product"=>$product->id])}}"class="btn btn-danger">Delete</a></td>
                             <td>
-
-
-                                    <a href="/admin/delete-product/{{$product->id}}"class="btn btn-danger">Delete</a>
-                                <a href="/admin/edit-product/{{$product->id}}"></a>
-
+                                <a href="{{route("single-product",["id"=>$product->id])}}" class="btn btn-warning text-light">Edit</a>
                             </td>
                         </tr>
 
